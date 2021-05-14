@@ -1,0 +1,46 @@
+{
+  "session": {
+    "preAuthCallback": {
+      "url": "http://www.example.com/callback/preAuth?status=SUSPEND",
+      "format": "REST_XML"
+    },
+    "returnUrl": {
+      "url": "http://www.example.com/transactionResult?MERCHANTREF=761585761585"
+    }
+  },
+  "transaction": {
+    "merchantReference": "761585761585",
+    "money": {
+      "amount": {
+        "fixed": 100
+      },
+      "currency": "GBP"
+    }
+  },
+  "customer": {
+    "identity": {
+      "merchantCustomerId": "1111111111111"
+    },
+    "details": {
+      "name": "given1 Family1",
+      "address": {
+        "line1": "matched",
+        "line2": "initialCustomer1AddresssLine2",
+        "city": "initalCustomer1City",
+        "region": "initalCustomer1Region",
+        "postcode": "AVS111",
+        "countryCode": "GBR"
+      },
+      "telephone": "0044111111111",
+      "emailAddress": "initialCustomer1@example.com",
+      "ipAddress": "1.1.1.1",
+      "defaultCurrency": "GBP"
+    }
+  },
+  "financialServices": {
+    "dateOfBirth": "19870818",
+    "surname": "Smith",
+    "accountNumber": "123ABC",
+    "postCode": "BS20"
+  }
+}

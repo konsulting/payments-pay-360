@@ -1,0 +1,5 @@
+{
+  "status": "FAILED",
+  "reasonCode": "exception.sessionState.noSession",
+  "reasonMessage": "Session not found"
+}

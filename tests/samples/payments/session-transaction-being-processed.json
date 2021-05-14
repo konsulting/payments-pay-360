@@ -1,0 +1,11 @@
+{
+  "status": "SUCCESS",
+  "hostedSessionStatus": {
+    "sessionId": "SMjogn8RQWJBF0ooyl1MA7p4S",
+    "context": "https://secure.mite.pay360.com/hosted",
+    "sessionState": "STARTED",
+    "transactionState": {
+      "transactionState": "PROCESSING"
+    }
+  }
+}

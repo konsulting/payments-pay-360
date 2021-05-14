@@ -1,0 +1,30 @@
+{
+  "name": "konsulting/pay-360",
+  "description": "Pay 360 Integration using Hosted Payments",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Keoghan Litchfield",
+      "email": "keoghan@klever.co.uk"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Konsulting\\Payments\\Pay360\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "vlucas/phpdotenv": "^5.3"
+  },
+  "require": {
+    "ext-json": "*",
+    "ext-curl": "*"
+  }
+}
