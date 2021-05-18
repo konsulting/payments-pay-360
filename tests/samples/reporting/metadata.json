@@ -1,0 +1,476 @@
+{
+  "description" : "Reporting API Metadata",
+  "version" : "1.0",
+  "fields" : [ {
+    "field" : "txn_volume",
+    "description" : "Number of Transactions",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "GT", "GTE", "IN", "NOT_IN", "LT", "LTE" ]
+  }, {
+    "field" : "txn_id",
+    "description" : "Transaction ID",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "GT", "GTE", "IN", "NOT_IN", "LT", "LTE" ]
+  }, {
+    "field" : "txn_date",
+    "description" : "Date",
+    "type" : "ISO_DATE",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "BETWEEN", "GT", "GTE", "LT", "LTE" ]
+  }, {
+    "field" : "txn_time",
+    "description" : "Time",
+    "type" : "ISO_TIME",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "BETWEEN", "GT", "GTE", "LT", "LTE" ]
+  }, {
+    "field" : "txn_datetime",
+    "description" : "Date/Time of the transaction",
+    "type" : "ISO_DATETIME",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "BETWEEN", "GT", "GTE", "LT", "LTE" ]
+  }, {
+    "field" : "txn_type",
+    "description" : "Transaction type",
+    "type" : "ENUM",
+    "values" : [ "CAPTURE", "CASH_EXPIRE", "CASH_ISSUE", "CASH_PAYMENT", "PAYMENT", "PAYOUT", "PREAUTH", "PREAUTH_VOID", "PAYMENT_VOID", "PAYMENT_INITIALIZE", "PAYMENT_UPDATE", "PAYMENT_COMPLETE", "PAYOUT_VOID", "PAYOUT_INITIALIZE", "PAYOUT_COMPLETE", "REFUND", "REPEAT", "VERIFY" ],
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN" ],
+    "aggregations" : [ "COUNT_DISTINCT" ]
+  }, {
+    "field" : "payment_product",
+    "description" : "Payment product",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN" ],
+    "aggregations" : [ "COUNT_DISTINCT" ]
+  }, {
+    "field" : "amount",
+    "description" : "Consumer spend",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "BETWEEN", "GT", "GTE", "IN", "NOT_IN", "LT", "LTE" ],
+    "aggregations" : [ "MIN", "MAX", "AVERAGE", "SUM", "COUNT", "COUNT_DISTINCT" ]
+  }, {
+    "field" : "requested_amount",
+    "description" : "Requested amount",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "BETWEEN", "GT", "GTE", "IN", "NOT_IN", "LT", "LTE" ],
+    "aggregations" : [ "MIN", "MAX", "AVERAGE", "SUM", "COUNT", "COUNT_DISTINCT" ]
+  }, {
+    "field" : "ccy_code",
+    "description" : "Currency",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN" ],
+    "aggregations" : [ "COUNT_DISTINCT" ]
+  }, {
+    "field" : "txn_status",
+    "description" : "Status",
+    "type" : "ENUM",
+    "values" : [ "SUCCESS", "FAILED", "CANCELLED", "EXPIRED", "VOIDED", "SUSPENDED_PAYPAL", "SUSPENDED_THREE_D_SECURE", "SUSPENDED", "SUSPENDED_REPLAY" ],
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN" ]
+  }, {
+    "field" : "txn_stage",
+    "description" : "Stage",
+    "type" : "ENUM",
+    "values" : [ "INITIALIZE", "FRAUD_RULES", "THREE_D_SECURE", "EXTERNAL_PROCESSING", "COMPLETE", "AUTHORISATION" ],
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN" ]
+  }, {
+    "field" : "CONTINUOUS_AUTHORITY_TYPE",
+    "description" : "Continuous authority type",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "PROCESSING_MODEL",
+    "description" : "Processing Model",
+    "type" : "ENUM",
+    "values" : [ "MANAGE", "REPORT", "ADVICE", "IMPORT" ],
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN" ]
+  }, {
+    "field" : "masked_pan",
+    "description" : "Card number",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN" ]
+  }, {
+    "field" : "last_four",
+    "description" : "Last four card digits",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ],
+    "aggregations" : [ "COUNT_DISTINCT" ]
+  }, {
+    "field" : "card_fingerprint",
+    "description" : "Card Fingerprint",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN" ]
+  }, {
+    "field" : "card_issuer",
+    "description" : "Card issuer",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN" ],
+    "aggregations" : [ "COUNT_DISTINCT" ]
+  }, {
+    "field" : "description",
+    "description" : "Description",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "merch_ref",
+    "description" : "Merchant reference",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "sales_channel",
+    "description" : "Sales channel",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN" ]
+  }, {
+    "field" : "commerce_type",
+    "description" : "Commerce type",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN" ]
+  }, {
+    "field" : "merchant_name",
+    "description" : "Merchant name",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN" ]
+  }, {
+    "field" : "acquirer",
+    "description" : "Acquirer",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN" ],
+    "aggregations" : [ "COUNT_DISTINCT" ]
+  }, {
+    "field" : "customer_name",
+    "description" : "Customer name",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN" ]
+  }, {
+    "field" : "customer_email",
+    "description" : "Customer email",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ],
+    "aggregations" : [ "COUNT_DISTINCT" ]
+  }, {
+    "field" : "customer_country",
+    "description" : "Customer country",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ],
+    "aggregations" : [ "COUNT_DISTINCT" ]
+  }, {
+    "field" : "issuer_country",
+    "description" : "Issuer country",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ],
+    "aggregations" : [ "COUNT_DISTINCT" ]
+  }, {
+    "field" : "IP_address",
+    "description" : "IP address",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ],
+    "aggregations" : [ "COUNT_DISTINCT" ]
+  }, {
+    "field" : "BANK_ACCOUNT_NUMBER",
+    "description" : "Bank Account Number",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "IBAN",
+    "description" : "IBAN",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "PAYMENT_ACCOUNT_HOLDER_NAME",
+    "description" : "Payment Account Holder Name",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "ACCOUNT_EMAIL",
+    "description" : "Account Email",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "BANK_SORT_CODE",
+    "description" : "Bank Sort Code",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "BIC",
+    "description" : "BIC",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "BANK_NAME",
+    "description" : "Bank Name",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "PAYMENT_METHOD_SOURCE",
+    "description" : "Payment method source",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "PAYMENT_METHOD_SOURCE_ID",
+    "description" : "Payment method source ID",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "IMPORT_SOURCE_SYSTEM",
+    "description" : "Import source system",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "IMPORT_SOURCE_TRANSACTION_ID",
+    "description" : "Import source transaction ID",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "PSP_MESSAGE",
+    "description" : "PSP message",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "PAYMENT_DESCRIPTOR",
+    "description" : "Payment Descriptor",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "THREED_SECURE_VERSION",
+    "description" : "3DS Version",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "THREED_SECURE_PROTOCOL_VERSION",
+    "description" : "3DS Protocol Version",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "THREED_SECURE_VERSION1_ATTEMPTED",
+    "description" : "3DS version 1 attempted",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "THREED_SECURE_VERSION2_ATTEMPTED",
+    "description" : "3DS version 2 attempted",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "THREED_SECURE_VERSION1_AVAILABILITY",
+    "description" : "3DS version 1 availability",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "THREED_SECURE_VERSION2_AVAILABILITY",
+    "description" : "3DS version 2 availability",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "3ds_status",
+    "description" : "3DS status",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "THREED_SECURE_SCHEME",
+    "description" : "3DS Scheme",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "3ds_eci",
+    "description" : "3DS ECI",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "THREED_SECURE_SERVER_TRANS_ID",
+    "description" : "3DS server transaction ID",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "THREED_SECURE_DS_TRANS_ID",
+    "description" : "DS transaction ID",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "THREED_SECURE_ACS_TRANS_ID",
+    "description" : "ACS transaction ID",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "THREED_SECURE_CHALLENGE_REQUESTED",
+    "description" : "3DS challenge level requested",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "THREED_SECURE_FRICTIONLESS",
+    "description" : "3DS frictionless",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "THREED_SECURE_CHALLENGE_LEVEL_PREFERRED",
+    "description" : "3DS challenge level preferred",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "THREED_SECURE_TRANSACTION_TYPE",
+    "description" : "3DSv2 transaction type",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "DELIVERY_EMAIL_ADDRESS",
+    "description" : "Delivery email address",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "DELIVERY_TIMEFRAME",
+    "description" : "Delivery timeframe",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "PREORDER",
+    "description" : "Is preorder",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "PREORDER_DATE",
+    "description" : "Preorder date",
+    "type" : "ISO_DATE",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "REORDER",
+    "description" : "Is reorder",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "SHIPPING_TO",
+    "description" : "Shipping location type",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "GIFTCARD_PURCHASE_AMOUNT",
+    "description" : "Giftcard total value",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "GIFTCARD_PURCHASE_CURRENCY",
+    "description" : "Giftcard currency",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "GIFTCARD_PURCHASE_COUNT",
+    "description" : "Number of giftcards in order",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "ACCOUNT_OPENED_PERIOD",
+    "description" : "Account opened time period",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "ACCOUNT_OPENED_DATE",
+    "description" : "Account opened date",
+    "type" : "ISO_DATE",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "ACCOUNT_LASTCHANGED_PERIOD",
+    "description" : "Account last changed time period",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "ACCOUNT_LASTCHANGED_DATE",
+    "description" : "Account last changed date",
+    "type" : "ISO_DATE",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "PASSWORD_LASTCHANGED_PERIOD",
+    "description" : "Password last changed time period",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "PASSWORD_LASTCHANGED_DATE",
+    "description" : "Password last changed date",
+    "type" : "ISO_DATE",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "ACCOUNT_REGISTERED_PERIOD",
+    "description" : "Account registered time period",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "ACCOUNT_REGISTERED_DATE",
+    "description" : "Account registered date",
+    "type" : "ISO_DATE",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "SHIPPING_ADDRESS_FIRSTUSE_PERIOD",
+    "description" : "Shipping address first used time period",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "SHIPPING_ADDRESS_FIRSTUSE_DATE",
+    "description" : "Shipping address first used date",
+    "type" : "ISO_DATE",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "SHIPPINGNAME_SAMEAS_ACCOUNTNAME",
+    "description" : "Shipping name same as account name",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "SUSPICIOUS_ACTIVITY",
+    "description" : "Account previously suspicious",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "PURCHASES_IN_LAST_SIX_MONTHS",
+    "description" : "Last six months purchases",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "ADD_CARDATTEMPTS_IN_LAST_24HOURS",
+    "description" : "Last 24 hours add card attempts",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "TRANSACTION_ATTEMPTS_IN_LAST_24HOURS",
+    "description" : "Last 24 hours transactions attempts",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "TRANSACTION_ATTEMPTS_IN_LAST_12MONTHS",
+    "description" : "Last 12 months transaction attempts",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "AUTHENTICATION_METHOD",
+    "description" : "Customer authentication method",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "AUTHENTICATION_TIME",
+    "description" : "Customer authentication date/time",
+    "type" : "ISO_DATETIME",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "PREVIOUS_AUTHENTICATION_REFERENCE",
+    "description" : "Previous 3DS authentication reference",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "PREVIOUS_AUTHENTICATION_METHOD",
+    "description" : "Previous 3DS authentication method",
+    "type" : "STRING",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "PREVIOUS_AUTHENTICATION_TIME",
+    "description" : "Previous 3DS authentication date/time",
+    "type" : "ISO_DATETIME",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "EXPIRY",
+    "description" : "Continuous authority agreement expiry date",
+    "type" : "ISO_DATE",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "MIN_FREQUENCY",
+    "description" : "Continuous authority agreement minimum payment frequency",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  }, {
+    "field" : "NUMBER_OF_INSTALMENTS",
+    "description" : "Continuous authority agreement number of instalments",
+    "type" : "NUMBER",
+    "filters" : [ "EQUALS", "NOT_EQUALS", "IN", "NOT_IN", "IS_NULL", "IS_NOT_NULL" ]
+  } ]
+}

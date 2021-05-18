@@ -70,7 +70,34 @@ class ApiTest extends TestCase
         $api = new Api($_ENV['USERNAME'], $_ENV['PASSWORD'], $_ENV['HOSTED_ID'], $_ENV['API_ID']);
         $api->setTesting(true);
 
-        var_dump($api->reporting()->getReport(['limit' => 10]));
+        var_dump($api->reporting()->getReport([
+            'limit' => 10,
+            'startFrom' => 1,
+            'fields' => [
+                [
+                    'field' => 'txn_id',
+                    'display' => true,
+                    'sort' => 'ASC',
+                    'sortOrder' => 2,
+                ],
+                [
+                    'field' => 'txn_date',
+                    'display' => true,
+                    'sort' => 'ASC',
+                    'sortOrder' => 1,
+                ],
+            ],
+            'includeFieldNames' => true,
+            'timezone' => '+00:00',
+        ]));
+    }
+
+    public function test_it_can_get_transaction_lists_for_date_range()
+    {
+        $api = new Api($_ENV['USERNAME'], $_ENV['PASSWORD'], $_ENV['HOSTED_ID'], $_ENV['API_ID']);
+        $api->setTesting(true);
+
+        var_dump($api->reporting()->getTransactionsInDateRange('2021-05-01', '2021-05-30'));
     }
 }
 

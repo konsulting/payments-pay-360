@@ -1,0 +1,107 @@
+{
+  "history": [
+    {
+      "transactionStatus": "PENDING",
+      "reasonCode": "U100",
+      "reasonMessage": "Suspended pending Three D Secure process",
+      "timeStamp": "2021-05-17T13:09:32.863+01:00"
+    },
+    {
+      "transactionStatus": "SUCCESS",
+      "reasonCode": "S100",
+      "reasonMessage": "Authorised",
+      "timeStamp": "2021-05-17T13:09:40.393+01:00"
+    }
+  ],
+  "locale": "en",
+  "processing": {
+    "model": "MANAGE",
+    "authResponse": {
+      "statusCode": "00",
+      "acquirerName": "Barclays Merchant Services",
+      "message": "Approved - no action",
+      "authCode": "015620",
+      "gatewayReference": "111gbp893ab703c970ec9AMeeee12z00",
+      "gatewayCode": "000.000.000",
+      "gatewayMessage": "Transaction succeeded",
+      "cv2Check": "MATCHED",
+      "status": "AUTHORISED",
+      "correlationIds": []
+    },
+    "route": "PAYON"
+  },
+  "customFields": [],
+  "threeDSecure": {
+    "scheme": "MASTERCARD_SECURECODE",
+    "status": "AUTHENTICATED",
+    "enrolmentIndicator": "Y",
+    "enrolmentStatus": "ENROLLED",
+    "enrolmentDateTime": "2021-05-17T13:09:32.815+01:00",
+    "authenticationIndicator": "Y",
+    "authenticationStatus": "AUTHENTICATED",
+    "xid": "00000000010135788554",
+    "avv": "AAABAzKJYQAAAAERWIlhAAAAAAB=",
+    "eci": "02",
+    "version": 1,
+    "protocolVersion": "1.0.2",
+    "versionsAttempted": [
+      {
+        "version": 2,
+        "availability": "INSUFFICIENT_DATA"
+      },
+      {
+        "version": 1,
+        "availability": "AVAILABLE"
+      }
+    ]
+  },
+  "paymentMethod": {
+    "registered": false,
+    "card": {
+      "cardFingerprint": "IkNwdkR7LUV6VNjJVFeTg+mfPQc=",
+      "new": true,
+      "cardType": "MC_DEBIT",
+      "cardUsageType": "DEBIT",
+      "cardScheme": "MASTERCARD",
+      "cardCategory": "DEBIT",
+      "maskedPan": "990000******5159",
+      "expiryDate": "0122",
+      "issuer": "PAY360 TESTING",
+      "issuerCountry": "GBR",
+      "cardHolderName": "TEST TEST",
+      "validDate": "0120"
+    },
+    "billingAddress": {
+      "line1": null,
+      "line2": null,
+      "line3": null,
+      "line4": null,
+      "city": null,
+      "region": null,
+      "postcode": null
+    },
+    "paymentClass": "CARD",
+    "reuse": {
+      "storage": "NONE"
+    }
+  },
+  "customer": {
+    "ip": "134.225.2.150",
+    "registered": false
+  },
+  "transaction": {
+    "transactionId": "10135788554",
+    "status": "SUCCESS",
+    "stage": "COMPLETE",
+    "type": "PAYMENT",
+    "amount": 12.0,
+    "consumerSpend": 12.0,
+    "currency": "GBP",
+    "transactionTime": "2021-05-17T13:09:32.618+01:00",
+    "receivedTime": "2021-05-17T13:09:32.618+01:00",
+    "channel": "WEB",
+    "customerInitiated": true
+  },
+  "sessionId": "SMjqE3iSf5D9N1Kj5qUyQ4lcN",
+  "installationId": "5307845"
+}
